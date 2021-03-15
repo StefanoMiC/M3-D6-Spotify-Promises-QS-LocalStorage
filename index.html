@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://kit.fontawesome.com/1205482781.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!--SIDEBAR VERTICAL-->
+        <div class="col-2">
+          <nav
+            class="navbar navbar-expand-md navbar-white bg-navbar fixed-left justify-content-between"
+            id="sidebar"
+          >
+            <div class="nav-container">
+              <a class="navbar-brand" href="index.html">
+                <img
+                  src="logo/Spotify_Logo.png"
+                  alt="Spotify_Logo"
+                  width="131"
+                  height="40"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <ul>
+                    <li>
+                      <a class="nav-item nav-link" href="index.html"
+                        ><i class="fas fa-home fa-lg"></i>&nbsp; Home
+                      </a>
+                    </li>
+                    <li>
+                      <a class="nav-item nav-link" href="#"
+                        ><i class="fas fa-book-open fa-lg"></i>&nbsp; Your
+                        Library</a
+                      >
+                    </li>
+                    <li>
+                      <div class="input-group mt-3">
+                        <input
+                          type="text"
+                          class="form-control mb-2"
+                          id="searchField"
+                          placeholder="Search"
+                          aria-label="Search"
+                          aria-describedby="basic-addon2"
+                        />
+                        <div
+                          class="input-group-append"
+                          style="margin-bottom: 4%"
+                        >
+                          <button
+                            class="btn btn-outline-secondary btn-sm"
+                            type="button"
+                            id="button-addon1"
+                            onclick="search()"
+                          >
+                            GO
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-btn">
+              <button class="btn signup-btn" type="button">Sign Up</button>
+              <button class="btn login-btn" type="button">Login</button>
+              <a href="#">Cookie Policy</a> |
+              <a href="#"> Privacy</a>
+            </div>
+          </nav>
+        </div>
+        <!--END SIDEBAR VERTICAL-->
+
+        <!--MAIN-->
+        <div class="col-12 col-md-9 offset-md-3 mainPage">
+          <div class="row">
+            <div class="col-9 col-lg-11 mainLinks d-none d-md-flex">
+              <a id="Rock" href="#">ROCK</a>
+              <a id="Pop" href="#">POP</a>
+              <a id="Hip Hop" href="#">HIP HOP</a>
+              <a href="#">NEW RELEASES</a>
+              <a href="#">DISCOVER</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <div id="searchResults" style="display: none">
+                <h2>Search Results</h2>
+                <div
+                  class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <div id="results">
+                <h2 class="pl-3 text-white"></h2>
+                <div
+                  class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                >
+                  <div>
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END MAIN-->
+
+    <!--NAVBAR FLEX-BOTTOM-->
+    <div class="player container-fluid fixed-bottom bg-container pt-1">
+      <div class="row flex-nowrap justify-content-between playBar py-3">
+        <div class="col-3">
+          <div class="playerArtistInfo d-flex">
+            <img />
+            <div class="d-flex flex-column pl-2">
+              <h6></h6>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="playerControls w-50 d-flex justify-content-between">
+            <a href="#">
+              <img src="playerbuttons/Shuffle.png" alt="shuffle" />
+            </a>
+            <a href="#">
+              <img src="playerbuttons/Previous.png" alt="previous" />
+            </a>
+            <a href="#" onclick="">
+              <img src="playerbuttons/Play.png" alt="play" />
+            </a>
+            <a href="#">
+              <img src="playerbuttons/Next.png" alt="next" />
+            </a>
+            <a href="#">
+              <img src="playerbuttons/Repeat.png" alt="repeat" />
+            </a>
+          </div>
+          <div class="progressContainer d-flex align-items-center">
+            <span class="currentTime">00:00</span>
+            <div class="progress w-100" onclick="">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <audio></audio>
+              </div>
+            </div>
+            <span class="duration">00:00</span>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="playerVolume">
+            <i class="fa fa-volume-up" onclick=""></i>
+            <input type="range" value="100" onchange="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END NAVBAR BOTTOM-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const history = localStorage.getItem("query");
+
+      let query = history ? history : "daft punk";
+
+      const handleSearchQuery = (e) => {
+        query = e.target.value;
+        localStorage.setItem("query", e.target.value);
+      };
+
+      const albumCard = (songInfo) => {
+        return `<img
+                class="img-fluid"
+                src=${songInfo.album.cover_medium}
+                alt="img placeholder"
+              />
+              <p>
+                <a href="/album_page.html?albumId=${songInfo.album.id}">${songInfo.album.title}</a>
+                <br />
+                <a href="/artist_page.html?artistId=${songInfo.artist.id}">${songInfo.artist.name}</a>
+              </p>`;
+      };
+
+      const search = (q = query) => {
+        console.log(history);
+        fetch(
+          "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + q
+          // {
+          //   method: "GET",
+          //   headers: {
+          //     "x-rapidapi-key":
+          //       "44990dcd76msh9e7711544b7bcbbp18140cjsnaed06a042dae",
+          //     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+          //   },
+          // }
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((parsedBody) => {
+            console.log(parsedBody);
+
+            const songsInfo = parsedBody.data;
+            const row = document.querySelector("#results > .row");
+
+            row.innerHTML = "";
+
+            songsInfo.forEach((song) => {
+              const spinner = document.querySelector(".spinner-border");
+              if (spinner) {
+                spinner.parentNode.remove();
+              }
+
+              const col = document.createElement("div");
+              col.className = "col text-center";
+              col.id = song.id;
+              col.innerHTML = albumCard(song);
+              row.appendChild(col);
+            });
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      };
+
+      window.onload = () => {
+        search();
+
+        const inputField = document.getElementById("searchField");
+        inputField.addEventListener("change", handleSearchQuery);
+      };
+    </script>
+  </body>
+</html>
