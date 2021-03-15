@@ -117,6 +117,127 @@
               <div class="row">
                 <div id="trackList" class="col-md-10 mb-5">
                   <div id="err"></div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
+                  <div class="py-3 trackHover">
+                    <a
+                      href="#"
+                      class="card-title trackHover px-3"
+                      style="color: white"
+                      >Song Title</a
+                    >
+                    <small class="duration pr-3" style="color: white">
+                      00:00
+                    </small>
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,7 +295,7 @@
                 <span class="duration">00:00</span>
               </div>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mr-3">
               <div class="playerVolume">
                 <i class="fa fa-volume-up" onclick=""></i>
                 <input type="range" value="100" onchange="" />
@@ -198,63 +319,7 @@
     ></script>
 
     <script>
-      const albumArt = (album) => {
-        console.log(album);
-        return `
-        <img
-                src=${album.cover_medium}
-                class="card-img img-fluid"
-                alt="cover image of ${album.label}"
-              />
-              <div class="mt-4 text-center">
-                <p class="album-title">${album.title}</p>
-              </div>
-              <div class="text-center">
-                <p class="artist-name">${album.artist.name}</p>
-              </div>
-              <div class="mt-4 text-center">
-                <button id="btnPlay" class="btn btn-success" type="button">
-                  Play
-                </button>`;
-      };
-
-      const song = (song) => {
-        return `
-                  <div class="py-3 trackHover">
-                    <a
-                      id=${song.id}
-                      href="#"
-                      class="card-title trackHover px-3"
-                      style="color: white"
-                      >${song.title}</a
-                    >
-                    <small class="duration pr-3" style="color: white">
-                      ${song.duration}
-                    </small>
-                  </div>
-        `;
-      };
-
-      window.onload = () => {
-        let albumId = new URLSearchParams(document.location.search).get(
-          "albumId"
-        );
-
-        fetch(
-          "https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId
-        )
-          .then((response) => response.json())
-          .then((albumInfo) => {
-            const imgContainer = document.getElementById("img-container");
-            imgContainer.innerHTML = albumArt(albumInfo);
-
-            const trackList = document.getElementById("trackList");
-
-            albumInfo.tracks.data.forEach((track) => {
-              trackList.innerHTML += song(track);
-            });
-          });
-      };
+      window.onload = () => {};
     </script>
   </body>
 </html>
