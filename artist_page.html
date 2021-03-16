@@ -84,8 +84,8 @@
         <!--END SIDEBAR VERTICAL-->
 
         <!--MAIN-->
-        <div class="col-12 col-md-9 offset-md-3 mainPage">
-          <div class="row mb-3">
+        <div class="col-12 mainPage">
+          <div class="row justify-content-center mb-3">
             <div class="col-9 col-lg-11 mainLinks d-none d-md-flex">
               <a id="Rock" href="#">ROCK</a>
               <a id="Pop" href="#">POP</a>
@@ -95,7 +95,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-10 mt-5">
               <h2 class="titleMain">STING</h2>
               <div id="followers">1154386 followers</div>
@@ -112,8 +112,8 @@
               </div>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-10 offset-1 col-md-10 col-lg-10 p-0">
+          <div class="row justify-content-center mb-3">
+            <div class="col-10 col-md-10 col-lg-10 p-0">
               <div class="mt-4 d-flex justify-content-start">
                 <h2 class="text-white font-weight-bold">Tracks</h2>
               </div>
@@ -170,58 +170,54 @@
 
     <!--NAVBAR FLEX-BOTTOM-->
     <div class="player container-fluid fixed-bottom bg-container pt-1">
-      <div class="row">
-        <div class="col-lg-10">
-          <div class="row flex-nowrap justify-content-between playBar py-3">
-            <div class="col-auto">
-              <div class="playerArtistInfo d-flex">
-                <img />
-                <div class="d-flex flex-column pl-2">
-                  <h6></h6>
-                  <p></p>
-                </div>
+      <div class="row flex-nowrap justify-content-between playBar py-3">
+        <div class="col-auto">
+          <div class="playerArtistInfo d-flex">
+            <img />
+            <div class="d-flex flex-column pl-2">
+              <h6></h6>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="playerControls w-50 d-flex justify-content-between">
+            <a href="#">
+              <img src="playerbuttons/Shuffle.png" alt="shuffle" />
+            </a>
+            <a href="#">
+              <img src="playerbuttons/Previous.png" alt="previous" />
+            </a>
+            <a href="#" onclick="">
+              <img src="playerbuttons/Play.png" alt="play" />
+            </a>
+            <a href="#">
+              <img src="playerbuttons/Next.png" alt="next" />
+            </a>
+            <a href="#">
+              <img src="playerbuttons/Repeat.png" alt="repeat" />
+            </a>
+          </div>
+          <div class="progressContainer d-flex align-items-center">
+            <span class="currentTime">00:00</span>
+            <div class="progress w-100" onclick="">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <audio></audio>
               </div>
             </div>
-            <div class="col-6">
-              <div class="playerControls w-50 d-flex justify-content-between">
-                <a href="#">
-                  <img src="playerbuttons/Shuffle.png" alt="shuffle" />
-                </a>
-                <a href="#">
-                  <img src="playerbuttons/Previous.png" alt="previous" />
-                </a>
-                <a href="#">
-                  <img src="playerbuttons/Play.png" alt="play" />
-                </a>
-                <a href="#">
-                  <img src="playerbuttons/Next.png" alt="next" />
-                </a>
-                <a href="#">
-                  <img src="playerbuttons/Repeat.png" alt="repeat" />
-                </a>
-              </div>
-              <div class="progressContainer d-flex align-items-center">
-                <span class="currentTime">00:00</span>
-                <div class="progress w-100">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="0"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <audio></audio>
-                  </div>
-                </div>
-                <span class="duration">00:00</span>
-              </div>
-            </div>
-            <div class="col-auto">
-              <div class="playerVolume">
-                <i class="fa fa-volume-up"></i>
-                <input type="range" value="100" onchange="" />
-              </div>
-            </div>
+            <span class="duration">00:00</span>
+          </div>
+        </div>
+        <div class="col-auto mr-3">
+          <div class="playerVolume">
+            <i class="fa fa-volume-up" onclick=""></i>
+            <input type="range" value="100" onchange="" />
           </div>
         </div>
       </div>
